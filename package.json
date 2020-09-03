@@ -4,5 +4,19 @@
   "main": "index.js",
   "repository": "https://github.com/Richardsnts1/Desafio-React.git",
   "author": "Richardsnts1 <richard.lopes.snsts@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.11.5"
+  }
 }
