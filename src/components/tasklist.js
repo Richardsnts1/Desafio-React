@@ -7,10 +7,15 @@ export default function Tasklist() {
   const [title, setTitle] = useState("");
 
   function handleAddTask() {
-    const task = title;
+    const task = { title: `${title}` };
 
-    setTasks(...tasks, task);
-    setTitle("");
+    setTasks([...tasks, task]);
+  }
+
+  function handleDelete(taskId) {
+    setTasks(tasks.filter((task) => task !== taskId));
+
+    console.log(taskId, tasks);
   }
 
   return (
@@ -21,16 +26,18 @@ export default function Tasklist() {
           id="text"
           onChange={(e) => setTitle(e.target.value)}
         />
-        <input type="text" />
       </div>
 
-      <button type="button" onClick={handleAddTask}>
+      <button type="button" className="btn-primary" onClick={handleAddTask}>
         Adicionar
       </button>
 
       <ul>
-        {tasks.map((tasks) => (
-          <li key={task.id}>{task.title}</li>
+        {tasks.map((task) => (
+          <>
+            <Task key={task} taskfield={task.title} />
+            <button onClick={() => handleDelete(task)}>Deletar</button>
+          </>
         ))}
       </ul>
     </>
