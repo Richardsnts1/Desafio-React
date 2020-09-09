@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 import Task from "./Task";
 
-export default function Tasklist(props) {
-  const [title, setTitle] = useState("");
+export default function Tasklist() {
   const [tasks, setTasks] = useState([]);
+  const [title, setTitle] = useState("");
 
   function handleAddTask() {
-    const { data: task } = title;
+    const task = title;
 
     setTasks(...tasks, task);
     setTitle("");
