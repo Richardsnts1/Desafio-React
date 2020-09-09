@@ -10,18 +10,28 @@ export default function Tasklist(props) {
     const { data: task } = title;
 
     setTasks(...tasks, task);
+    setTitle("");
   }
+
   return (
     <>
-      <div className="inputContainer">
-        <input type="text" onChange={(e) => setTitle(e.target.value)} />
+      <div className="InputContainer">
+        <input
+          type="text"
+          id="text"
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <input type="text" />
       </div>
 
       <button type="button" onClick={handleAddTask}>
         Adicionar
       </button>
+
       <ul>
-        <Task>{title}</Task>
+        {tasks.map((task) => (
+          <li key={task.id}>{task.title}</li>
+        ))}
       </ul>
     </>
   );
