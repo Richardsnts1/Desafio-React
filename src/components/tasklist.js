@@ -29,7 +29,7 @@ export default function Tasklist() {
       </button>
 
       <ul>
-        {tasks.map((task) => (
+        {tasks.map((tasks) => (
           <li key={task.id}>{task.title}</li>
         ))}
       </ul>
